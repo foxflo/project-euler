@@ -1,5 +1,20 @@
 from math import ceil,sqrt
 
+""" Generate primess less than n
+"""
+def gen_primes_below_n(n):
+    primes=[2,3,5,7]
+    counter=11
+    while counter < n:
+        for i in primes:
+            if i > ceil(sqrt(counter)):
+                primes.append(counter)
+                break
+            if counter%i==0:
+                break
+        counter+=1
+    return primes
+    
 """ Compute whether a number is pentagonal
 
     To check whether a number, x, is pentagonal, we need to see whether it can be written as:
